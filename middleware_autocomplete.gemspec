@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "middleware_autocomplete"
   spec.version       = MiddlewareAutocomplete::VERSION
   spec.authors       = ["Konstantin Ilchenko"]
-  spec.email         = ["konstantin.ilchenko@altoros.com"]
+  spec.email         = ["konstantin@ilchenko.by"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""
