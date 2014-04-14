@@ -45,6 +45,9 @@ Create file ```app/autocompletes/posts_autocomplete.rb```
       # self.route_name = nil # UrlHelper that will be generated for this class,
       # Default #{self.namespace}_#{self.path}_path
 
+      # self.use_with_connection = false
+      # Set it to false only if you are not using database
+
       # Returns search results for autocompletition
       # Result should be in the same format that your content_type
       #
@@ -68,6 +71,7 @@ You can change default namespace and content_type for all classes. Create ```con
     MiddlewareAutocomplete.setup do |config|
       config.namespace = '/search'
       config.content_type = :xml
+      config.use_with_connection = false
     end
 
 Now middleware will respond with application/xml content type and all paths will start with /search
