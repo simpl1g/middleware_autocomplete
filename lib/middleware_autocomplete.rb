@@ -13,4 +13,8 @@ module MiddlewareAutocomplete
   @@content_type = :json
 
   ROUTES = ActiveSupport::OrderedHash.new
+
+  def self.setup
+    yield self
+  end
 end

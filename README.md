@@ -61,6 +61,16 @@ By default this will create ```autocomplete_posts_path``` url helper, so you can
 
 Now you can send requests to this path
 
+# Setting defaults
+
+You can change default namespace and content_type for all classes. Create ```config/initializers/middleware_autocomplete.rb```
+
+    MiddlewareAutocomplete.setup do |config|
+      config.namespace = '/search'
+      config.content_type = :xml
+    end
+
+Now middleware will respond with application/xml content type and all paths will start with /search
 
 ## Contributing
 
