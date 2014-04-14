@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/simpl1g/middleware_autocomplete.svg)](https://travis-ci.org/simpl1g/middleware_autocomplete)
 [![Code Climate](https://codeclimate.com/github/simpl1g/middleware_autocomplete.png)](https://codeclimate.com/github/simpl1g/middleware_autocomplete)
 
 # MiddlewareAutocomplete
