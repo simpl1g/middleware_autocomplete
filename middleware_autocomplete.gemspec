@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Konstantin Ilchenko"]
   s.email       = ["konstantin@ilchenko.by"]
   s.homepage    = "http://github.com/simpl1g/middleware_autocomplete"
-  s.summary     = "TODO: Summary of MiddlewareAutocomplete."
-  s.description = "TODO: Description of MiddlewareAutocomplete."
+  s.summary     = "Fast autocomplete for Rails."
+  s.description = "Generates autocomplete response straight from your middleware for Rails"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
