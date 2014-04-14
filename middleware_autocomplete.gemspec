@@ -1,23 +1,23 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'middleware_autocomplete/version'
+$:.push File.expand_path("../lib", __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name          = "middleware_autocomplete"
-  spec.version       = MiddlewareAutocomplete::VERSION
-  spec.authors       = ["Konstantin Ilchenko"]
-  spec.email         = ["konstantin@ilchenko.by"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+# Maintain your gem's version:
+require "middleware_autocomplete/version"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+# Describe your gem and declare its dependencies:
+Gem::Specification.new do |s|
+  s.name        = "middleware_autocomplete"
+  s.version     = MiddlewareAutocomplete::VERSION
+  s.authors     = ["Konstantin Ilchenko"]
+  s.email       = ["konstantin@ilchenko.by"]
+  s.homepage    = "http://github.com/simpl1g/middleware_autocomplete"
+  s.summary     = "TODO: Summary of MiddlewareAutocomplete."
+  s.description = "TODO: Description of MiddlewareAutocomplete."
+  s.license     = "MIT"
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
+
+  s.add_dependency "rails", "~> 4.0.0"
+
+  s.add_development_dependency "sqlite3"
 end

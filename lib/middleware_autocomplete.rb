@@ -1,4 +1,4 @@
-require "middleware_autocomplete/version"
+require "middleware_autocomplete/engine"
 
 module MiddlewareAutocomplete
   autoload :Base, 'middleware_autocomplete/base'
@@ -10,11 +10,7 @@ module MiddlewareAutocomplete
 
   # Default content_type
   mattr_accessor :content_type
-  @@namespace = :json
+  @@content_type = :json
 
   ROUTES = ActiveSupport::OrderedHash.new
 end
-
-Dir[Rails.root.join 'app', 'autocompletes', '*.rb'].each { |f| require f }
-
-MiddlewareAutocomplete::Base.setup
