@@ -29,14 +29,6 @@ Or install it yourself as:
 
     $ gem install middleware_autocomplete
 
-Add to ```application.rb``` config file line
-
-    config.middleware.use 'MiddlewareAutocomplete::Router'
-
-If you don't need any of middlewares provided by Rails, you can shave some time by placing MiddlewareAutocomplete on top of your middleware list
-
-    config.middleware.insert_before 0, 'MiddlewareAutocomplete::Router'
-
 ## Usage
 
 Create file ```app/autocompletes/posts_autocomplete.rb```
