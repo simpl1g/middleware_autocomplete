@@ -4,4 +4,8 @@ class MiddlewareAutocompleteTest < ActiveSupport::TestCase
   test "truth" do
     assert_kind_of Module, MiddlewareAutocomplete
   end
+
+  # test "loads routes" do
+
+  # end
 end

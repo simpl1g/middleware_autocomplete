@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class NavigationTest < ActionDispatch::IntegrationTest
-  fixtures :all
+  # test "returns json from autocomplete route" do
 
-  # test "the truth" do
-  #   assert true
+  #   get autocomplete_posts_path
+  #   assert_response :success
   # end
 end
 
