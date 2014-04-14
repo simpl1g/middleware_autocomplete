@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    middleware_autocomplete (0.0.1)
-      rails (~> 4.1.0)
+    middleware_autocomplete (0.0.2)
+      activerecord (>= 3.2)
+      rails (>= 3.2)
 
 GEM
   remote: https://rubygems.org/
