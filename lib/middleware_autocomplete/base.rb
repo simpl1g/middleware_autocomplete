@@ -3,23 +3,6 @@ module MiddlewareAutocomplete
     class << self
       attr_accessor :namespace, :path, :route_name, :content_type, :search_key
 
-      def setup
-        autocomplete_klasses = descendants
-
-        autocomplete_klasses.each do |klass|
-          ROUTES[klass.route] = klass
-        end
-
-        # Add url helpers namespace_route_path
-        Rails.application.routes.named_routes.module.module_eval do
-          autocomplete_klasses.each do |klass|
-            define_method "#{klass.route_name}_path" do
-              klass.route
-            end
-          end
-        end
-      end
-
       def route
         [namespace, path].join('/')
       end

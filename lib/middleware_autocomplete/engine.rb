@@ -5,7 +5,7 @@ module MiddlewareAutocomplete
       Dir.glob(Rails.root + "app/autocompletes/**/*_autocomplete.rb").each do |c|
         require_dependency(c)
       end
-      MiddlewareAutocomplete::Base.setup
+      MiddlewareAutocomplete.load_routes
     end
 
     initializer 'middleware_autocomplete.connect_middleware_router' do |app|
