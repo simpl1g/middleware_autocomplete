@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/middleware_autocomplete.svg)](http://badge.fury.io/rb/middleware_autocomplete)
 [![Build Status](https://travis-ci.org/simpl1g/middleware_autocomplete.svg)](https://travis-ci.org/simpl1g/middleware_autocomplete)
 [![Code Climate](https://codeclimate.com/github/simpl1g/middleware_autocomplete.png)](https://codeclimate.com/github/simpl1g/middleware_autocomplete)
 [![Coverage Status](https://coveralls.io/repos/simpl1g/middleware_autocomplete/badge.png)](https://coveralls.io/r/simpl1g/middleware_autocomplete)
