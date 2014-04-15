@@ -12,12 +12,12 @@ Rails.backtrace_cleaner.remove_silencers!
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
-if ActiveSupport::TestCase.method_defined?(:fixture_path=)
-  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
-end
+# if ActiveSupport::TestCase.method_defined?(:fixture_path=)
+#   ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
+# end
 
-# Load fixtures from the engine
-ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
+# # Load fixtures from the engine
+# ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
 
 class ActiveSupport::TestCase
   fixtures :all

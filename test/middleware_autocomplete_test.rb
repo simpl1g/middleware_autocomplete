@@ -5,7 +5,7 @@ class MiddlewareAutocompleteTest < ActiveSupport::TestCase
     assert_kind_of Module, MiddlewareAutocomplete
   end
 
-  # test "loads routes" do
-
-  # end
+  test "loads routes" do
+    assert_equal MiddlewareAutocomplete::ROUTES, {'/autocomplete/posts' => PostsAutocomplete}
+  end
 end
