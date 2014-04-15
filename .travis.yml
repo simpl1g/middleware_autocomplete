@@ -1,6 +1,8 @@
 language: ruby
 
-script: "bundle exec rake test"
+script:
+  - "RAILS_ENV=test bundle exec rake db:create db:migrate"
+  - "bundle exec rake test"
 
 cache: bundler
 
