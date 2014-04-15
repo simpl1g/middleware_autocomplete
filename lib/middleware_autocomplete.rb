@@ -31,6 +31,6 @@ module MiddlewareAutocomplete
     end
 
     UrlHelpers.generate_helpers!
-    Rails.application.routes.named_routes.module.include(UrlHelpers)
+    Rails.application.routes.named_routes.module.send(:include, UrlHelpers)
   end
 end
