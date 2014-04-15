@@ -61,8 +61,8 @@ This will create ```autocomplete_posts_path``` url helper, so you can use it in 
 You can pass this options to each Autocomplete class
 
     class PostsAutocomplete < MiddlewareAutocomplete::Base
-      # self.namespace = '/autocomplete'
-      # Prepended to all your paths
+      # self.namespace = 'autocomplete'
+      # Prepended to all your paths and url helpers
 
       # self.content_type = :json
       # Can be any Rails Mime::Type
@@ -75,7 +75,8 @@ You can pass this options to each Autocomplete class
 
       # self.route_name = nil
       # UrlHelper that will be generated for this class.
-      # Default #{self.namespace}_#{self.path}_path
+      # Default #{self.namespace}_#{self.path}, e.g. autocomplete_posts
+      # _path will be appended automatically, no need to add it
 
       # self.use_with_connection = false
       # Ensures correct handling of database connections.
@@ -88,7 +89,7 @@ You can pass this options to each Autocomplete class
 You can change default namespace, content_type and use_with_connecton for all classes. Create ```config/initializers/middleware_autocomplete.rb```
 
     MiddlewareAutocomplete.setup do |config|
-      config.namespace = '/search'
+      config.namespace = 'search'
       config.content_type = :xml
       config.use_with_connection = false
     end

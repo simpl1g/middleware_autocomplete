@@ -7,7 +7,7 @@ module MiddlewareAutocomplete
 
   # Path namespace for autocompletes
   mattr_accessor :namespace
-  @@namespace = '/autocomplete'
+  @@namespace = 'autocomplete'
 
   # Default content_type
   mattr_accessor :content_type

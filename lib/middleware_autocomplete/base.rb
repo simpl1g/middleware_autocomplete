@@ -19,7 +19,7 @@ module MiddlewareAutocomplete
 
       # Full path to the Autocomplete class
       def route
-        [namespace, path].join('/')
+        [namespace, path].reject(&:blank?).join('/').prepend('/')
       end
 
       # Path without namespace
@@ -33,7 +33,7 @@ module MiddlewareAutocomplete
       end
 
       def namespace
-        @namespace || MiddlewareAutocomplete.namespace
+        (@namespace || MiddlewareAutocomplete.namespace).sub(/\A\//, '')
       end
 
       def use_with_connection
@@ -60,11 +60,11 @@ module MiddlewareAutocomplete
       private
 
       def default_route_name
-        "autocomplete_#{default_path}"
+        [namespace, default_path].reject(&:blank?).join('_').tr('/', '_')
       end
 
       def default_path
-        name.demodulize.sub(/Autocomplete\Z/, '').underscore
+        name.sub(/Autocomplete\Z/, '').underscore
       end
 
       def with_connection
