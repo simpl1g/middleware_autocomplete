@@ -54,7 +54,7 @@ This will work, but each request to this method leads to initializing whole Appl
 
     end
 
-This will create ```autocomplete_posts_path``` url helper, so you can use it in views. Requesting this path will render the same response without initializing your Controller, so the time to respond can be reduce up to 2 times.
+This will create ```autocomplete_posts_path``` url helper, so you can use it in views. Requesting this path will render the same response without initializing your Controller, so the time to respond can be reduced up to 2 times.
 
 # Settings
 
