@@ -1,4 +1,5 @@
 require "middleware_autocomplete/engine"
+require "middleware_autocomplete/log_subscriber"
 
 module MiddlewareAutocomplete
   autoload :Base,       'middleware_autocomplete/base'
