@@ -17,6 +17,13 @@ module MiddlewareAutocomplete
         end
       end
 
+      def call(env)
+        ActiveSupport::Notifications.instrument 'request.middleware_autocomplete' do
+          result = perform(Rack::Request.new(env).params)
+          [200, { 'Content-Type' => content_type_string }, [result]]
+        end
+      end
+
       # Full path to the Autocomplete class
       def route
         [namespace, path].reject(&:blank?).join('/').prepend('/')

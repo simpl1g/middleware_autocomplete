@@ -1,6 +1,6 @@
 module MiddlewareAutocomplete
   class LogSubscriber < ActiveSupport::LogSubscriber
-    def perform(event)
+    def request(event)
       info "#{GREEN}#{BOLD}[MiddlewareAutocomplete]#{CLEAR} Completed 200 OK in #{event.duration.round(3)} ms"
     end
   end
