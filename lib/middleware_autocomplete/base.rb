@@ -1,7 +1,7 @@
 module MiddlewareAutocomplete
   class Base
     class << self
-      attr_accessor :namespace, :path, :route_name, :content_type, :search_key
+      attr_accessor :namespace, :path, :route_name, :content_type, :search_key, :expire_in, :cache_key
 
       # Calls user defined method to return results
       # Wraps this method with AR with_connection to prevent connection leaks
@@ -15,6 +15,22 @@ module MiddlewareAutocomplete
         else
           search(params)
         end
+      end
+
+      def cached(params)
+        cache.fetch(cache_key, cache_options) { perform(params) }
+      end
+
+      def cache_key
+        [route, @cache_key.try(:call)].compact.join('?')
+      end
+
+      def expire_in
+        @expire_in || MiddlewareAutocomplete.expire_in
+      end
+
+      def cache_options
+        { expire_in: expire_in }
       end
 
       def call(env)
@@ -62,6 +78,10 @@ module MiddlewareAutocomplete
       # Content type string, e.g. 'application/json', 'application/xml'
       def content_type_string
         Mime::Type.lookup_by_extension(content_type).to_s
+      end
+
+      def cache
+        MiddlewareAutocomplete.cache
       end
 
       private

@@ -20,18 +20,28 @@ module MiddlewareAutocomplete
   mattr_accessor :use_with_connection
   @@use_with_connection = true
 
+  # Default cache store
+  mattr_accessor :cache
+  @@cache = Rails.cache
+
+  # Default cache expiring time
+  mattr_accessor :expire_in
+  @@expire_in = 15.minutes
+
   ROUTES = ActiveSupport::OrderedHash.new
 
-  def self.setup
-    yield self
-  end
-
-  def self.load_routes
-    Base.descendants.each do |klass|
-      ROUTES[klass.route] = klass
+  class << self
+    def setup
+      yield self
     end
 
-    UrlHelpers.generate_helpers!
-    Rails.application.routes.named_routes.module.send(:include, UrlHelpers)
+    def load_routes
+      Base.descendants.each do |klass|
+        ROUTES[klass.route] = klass
+      end
+
+      UrlHelpers.generate_helpers!
+      Rails.application.routes.named_routes.module.send(:include, UrlHelpers)
+    end
   end
 end

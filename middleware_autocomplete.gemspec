@@ -23,4 +23,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry"
   s.add_development_dependency "coveralls"
+  s.add_development_dependency 'redis-rails'
+  s.add_development_dependency 'dalli'
+  s.add_development_dependency 'connection_pool'
 end
